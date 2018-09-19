@@ -1,5 +1,5 @@
 @extends('layouts.apa')
 
 @section('content')
-okkokokokokokokokokok
+esto no esta chido
 @endsection
