@@ -15,6 +15,43 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/begin', function () {
+    return view('begin');
+});
+
+Route::get('/materia/index', function () {
+    return view('materias.materiaIndex');
+});
+
+Route::get('/materia/create', function () {
+    return view('materias.materiaForm');
+});
+
+Route::post('/materia/store', function () {
+//     return view('materias.materiaIndex');
+});
+
+Route::get('/materia/show/{id}', function ($id) {
+//     dd($id);
+    return view('materias.materiaShow',compact('id'));
+});
+
+Route::get('/materia/edit/{id}', function ($id) {
+    return view('materias.materiaEdit',compact('id'));
+});
+
+Route::post('/materia/update/{id}', function ($id) {
+//     return view('materias.materiaEdit',compact('id'));
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/materias','MateriaController@index');
+
+
+
+
+
+#Route::get('/materias',function(){return view('materias.materiaIndex');});
+#Route::get('/coso',function(){return '<h1>holamundo</h1>';});
