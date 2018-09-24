@@ -19,35 +19,35 @@ Route::get('/begin', function () {
     return view('begin');
 });
 
-Route::get('/materia/index', function () {
-    return view('materias.materiaIndex');
-});
-
-Route::get('/materia/create', function () {
-    return view('materias.materiaForm');
-});
-
-Route::post('/materia/store', function () {
+// Route::get('/materia/index', function () {
 //     return view('materias.materiaIndex');
-});
+// });
 
-Route::get('/materia/show/{id}', function ($id) {
-//     dd($id);
-    return view('materias.materiaShow',compact('id'));
-});
+// Route::get('/materia/create', function () {
+//     return view('materias.materiaForm');
+// });
 
-Route::get('/materia/edit/{id}', function ($id) {
-    return view('materias.materiaEdit',compact('id'));
-});
+// Route::post('/materia/store', function () {
+// //     return view('materias.materiaIndex');
+// });
 
-Route::post('/materia/update/{id}', function ($id) {
+// Route::get('/materia/show/{id}', function ($id) {
+// //     dd($id);
+//     return view('materias.materiaShow',compact('id'));
+// });
+
+// Route::get('/materia/edit/{id}', function ($id) {
 //     return view('materias.materiaEdit',compact('id'));
-});
+// });
 
+// Route::post('/materia/update/{id}', function ($id) {
+// //     return view('materias.materiaEdit',compact('id'));
+// });
+// Route::get('/materias','MateriaController@index');
+Route::resource('/materia','MateriaController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/materias','MateriaController@index');
 
 
 

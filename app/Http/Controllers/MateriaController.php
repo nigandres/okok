@@ -24,7 +24,7 @@ class MateriaController extends Controller
      */
     public function create()
     {
-        //
+      return view('materias.materiaForm');
     }
 
     /**
@@ -35,7 +35,7 @@ class MateriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      return view('materias.materiaIndex');
     }
 
     /**
@@ -44,9 +44,10 @@ class MateriaController extends Controller
      * @param  \App\Materia  $materia
      * @return \Illuminate\Http\Response
      */
-    public function show(Materia $materia)
+    public function show($id)
+//     public function show(Materia $materia)
     {
-        //
+      return view('materias.materiaShow',compact('id'));
     }
 
     /**
@@ -55,9 +56,10 @@ class MateriaController extends Controller
      * @param  \App\Materia  $materia
      * @return \Illuminate\Http\Response
      */
-    public function edit(Materia $materia)
+    public function edit($id)
+//     public function edit(Materia $materia)
     {
-        //
+      return view('materias.materiaEdit',compact('id'));
     }
 
     /**
@@ -67,9 +69,10 @@ class MateriaController extends Controller
      * @param  \App\Materia  $materia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Materia $materia)
+    public function update(Request $request, $id)
+//     public function update(Request $request, Materia $materia)
     {
-        //
+      return view('materias.materiaEdit',compact('id'));
     }
 
     /**
@@ -78,7 +81,8 @@ class MateriaController extends Controller
      * @param  \App\Materia  $materia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Materia $materia)
+    public function destroy($id)
+//     public function destroy(Materia $materia)
     {
         //
     }
