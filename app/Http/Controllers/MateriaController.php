@@ -36,7 +36,18 @@ class MateriaController extends Controller
      */
     public function store(Request $request)
     {
-      return view('materias.materiaIndex');
+//       dd('nepe');
+      $materia = new Materia();
+      $materia->crn = $request->input('crn');
+      $materia->seccion = $request->seccion;
+      $materia->calendario = $request->calendario;
+      $materia->materia = $request->materia;
+      $materia->hora_inicio = $request->horainicio;
+      $materia->salon = $request->salon;
+      $materia->user_id = $request->usuario;
+      $materia->save();
+      return redirect()->route('materia.index');
+//       return view('materias.materiaIndex');
     }
 
     /**

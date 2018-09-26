@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                   Dashboard
@@ -21,6 +21,7 @@
                       <tr>
                         <td>id</td>
                         <td>crn</td>
+                        <td>seccion</td>
                         <td>calendario</td>
                         <td>materia</td>
                         <td>hora_inicio</td>
@@ -30,13 +31,16 @@
                     </thead>
                     <tbody>
                       @foreach($materias as $materia)
-                        <td>{{ $materia->id }}</td>
-                        <td>{{ $materia->crn }}</td>
-                        <td>{{ $materia->calendario }}</td>
-                        <td>{{ $materia->materia }}</td>
-                        <td>{{ $materia->hora_inicio }}</td>
-                        <td>{{ $materia->salon }}</td>
-                        <td>{{ $materia->user_id }}</td>
+                        <tr>
+                          <td>{{ $materia->id }}</td>
+                          <td>{{ $materia->crn }}</td>
+                          <td>{{ $materia->seccion }}</td>
+                          <td>{{ $materia->calendario }}</td>
+                          <td>{{ $materia->materia }}</td>
+                          <td>{{ $materia->hora_inicio }}</td>
+                          <td>{{ $materia->salon }}</td>
+                          <td>{{ $materia->user_id }}</td>
+                        </tr>
                       @endforeach
                     </tbody>
                   </table>

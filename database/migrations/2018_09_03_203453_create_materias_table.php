@@ -16,6 +16,7 @@ class CreateMateriasTable extends Migration
         Schema::create('materias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('crn',10);
+            $table->string('seccion',10);
             $table->string('calendario',15);
             $table->string('materia');
             $table->time('hora_inicio');
