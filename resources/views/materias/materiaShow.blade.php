@@ -1,4 +1,4 @@
-@extends('layouts.apa')
+@extends('layouts.apu')
 
 @section('content')
 <div class="container">

@@ -45,6 +45,7 @@ Route::get('/begin', function () {
 // });
 // Route::get('/materias','MateriaController@index');
 Route::resource('/materia','MateriaController');
+Route::resource('/alumno','AlumnoController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
