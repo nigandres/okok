@@ -15,31 +15,23 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                  <h1>Que onda perros</h1>
+                  <h1>Listado de alumnos</h1>
                   <table class="table">
                     <thead>
                       <tr>
                         <td>id</td>
-                        <td>crn</td>
-                        <td>seccion</td>
-                        <td>calendario</td>
-                        <td>materia</td>
-                        <td>hora_inicio</td>
-                        <td>salon</td>
-                        <td>user_id</td>
+                        <td>nombre</td>
+                        <td>codigo</td>
+                        <td>carrera</td>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($materias as $materia)
+                      @foreach($alumnos as $alumnos)
                         <tr>
-                          <td>{{ $materia->id }}</td>
-                          <td>{{ $materia->crn }}</td>
-                          <td>{{ $materia->seccion }}</td>
-                          <td>{{ $materia->calendario }}</td>
-                          <td>{{ $materia->materia }}</td>
-                          <td>{{ $materia->hora_inicio }}</td>
-                          <td>{{ $materia->salon }}</td>
-                          <td>{{ $materia->user_id }}</td>
+                          <td>{{ $alumnos->id }}</td>
+                          <td>{{ $alumnos->nombre }}</td>
+                          <td>{{ $alumnos->codigo }}</td>
+                          <td>{{ $alumnos->carrera }}</td>
                         </tr>
                       @endforeach
                     </tbody>
