@@ -46,6 +46,7 @@ class MateriaController extends Controller
       $materia->salon = $request->salon;
       $materia->user_id = $request->usuario;
       $materia->save();
+//       Materia::create($request->all());
       return redirect()->route('materia.index');
 //       return view('materias.materiaIndex');
     }
@@ -56,10 +57,16 @@ class MateriaController extends Controller
      * @param  \App\Materia  $materia
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-//     public function show(Materia $materia)
+    public function show(Materia $materium)
+//     public function show($id)
     {
-      return view('materias.materiaShow',compact('id'));
+//       $materia = Materia::find($id);
+      dd($materium);
+//       dd($materia);
+//       $subject = Materia::find($id);
+//       dd($sbject);
+//       return view('materias.materiaShow',compact('$subject'));
+      return view('materias.materiaShow')->with(['subject' => $materia]);
     }
 
     /**
@@ -93,9 +100,11 @@ class MateriaController extends Controller
      * @param  \App\Materia  $materia
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-//     public function destroy(Materia $materia)
+//     public function destroy($id)
+    public function destroy(Materia $materia)
     {
-        //
+        dd($materia);
+        $materia->delete();
+        return redirect()->route('materia.index');
     }
 }

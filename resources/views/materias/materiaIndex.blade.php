@@ -32,7 +32,11 @@
                     <tbody>
                       @foreach($materias as $materia)
                         <tr>
-                          <td>{{ $materia->id }}</td>
+                          <td>
+                            <a href="{{ action('MateriaController@show',$materia->id) }}" class="btn btn-success">
+                              {{ $materia->id }}
+                            </a>
+                          </td>
                           <td>{{ $materia->crn }}</td>
                           <td>{{ $materia->seccion }}</td>
                           <td>{{ $materia->calendario }}</td>
