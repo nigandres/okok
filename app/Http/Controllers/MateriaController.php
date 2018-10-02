@@ -57,16 +57,16 @@ class MateriaController extends Controller
      * @param  \App\Materia  $materia
      * @return \Illuminate\Http\Response
      */
-    public function show(Materia $materium)
+    public function show(Materia $NombreDeRouteListYController)
 //     public function show($id)
     {
 //       $materia = Materia::find($id);
-      dd($materium);
+      // dd($materium);
 //       dd($materia);
 //       $subject = Materia::find($id);
 //       dd($sbject);
 //       return view('materias.materiaShow',compact('$subject'));
-      return view('materias.materiaShow')->with(['subject' => $materia]);
+      return view('materias.materiaShow')->with(['subject' => $NombreDeRouteListYController]);
     }
 
     /**

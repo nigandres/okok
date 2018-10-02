@@ -44,7 +44,9 @@ Route::get('/begin', function () {
 // //     return view('materias.materiaEdit',compact('id'));
 // });
 // Route::get('/materias','MateriaController@index');
-Route::resource('/materia','MateriaController');
+Route::resource('materia','MateriaController')->parameters([
+    'materia' => 'NombreDeRouteListYController'
+]);
 Route::resource('/alumno','AlumnoController');
 Auth::routes();
 
