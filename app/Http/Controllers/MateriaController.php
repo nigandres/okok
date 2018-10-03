@@ -36,6 +36,9 @@ class MateriaController extends Controller
      */
     public function store(Request $request)
     {
+      $request->validate([
+        'crn' => 'required|max:6',
+      ]);
 //       dd('nepe');
       $materia = new Materia();
       $materia->crn = $request->input('crn');
