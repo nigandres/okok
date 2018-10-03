@@ -45,7 +45,7 @@ Route::get('/begin', function () {
 // });
 // Route::get('/materias','MateriaController@index');
 Route::resource('materia','MateriaController')->parameters([
-    'materia' => 'NombreDeRouteListYController'
+    'materia' => 'materia'
 ]);
 Route::resource('/alumno','AlumnoController');
 Auth::routes();

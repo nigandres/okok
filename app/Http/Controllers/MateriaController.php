@@ -57,16 +57,18 @@ class MateriaController extends Controller
      * @param  \App\Materia  $materia
      * @return \Illuminate\Http\Response
      */
-    public function show(Materia $NombreDeRouteListYController)
+    public function show(Materia $materia)
+//     public function show(Materia $materium)
 //     public function show($id)
     {
 //       $materia = Materia::find($id);
-      // dd($materium);
 //       dd($materia);
 //       $subject = Materia::find($id);
 //       dd($sbject);
 //       return view('materias.materiaShow',compact('$subject'));
-      return view('materias.materiaShow')->with(['subject' => $NombreDeRouteListYController]);
+//       return view('materias.materiaShow')->with(['subject' => $materia]);
+      return view('materias.materiaShow',compact('materia'));
+//       return view('materias.materiaShow')->with(['subject' => $materia]);
     }
 
     /**
@@ -75,10 +77,11 @@ class MateriaController extends Controller
      * @param  \App\Materia  $materia
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-//     public function edit(Materia $materia)
+//     public function edit($id)
+    public function edit(Materia $materia)
     {
-      return view('materias.materiaEdit',compact('id'));
+      return view('materias.materiaForm',compact('materia'));
+//       return view('materias.materiaEdit',compact('id'));
     }
 
     /**
@@ -88,10 +91,21 @@ class MateriaController extends Controller
      * @param  \App\Materia  $materia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-//     public function update(Request $request, Materia $materia)
+//     public function update(Request $request, $id)
+    public function update(Request $request, Materia $materia)
     {
-      return view('materias.materiaEdit',compact('id'));
+//       dd("adios",$materia,$request->all());
+      $materia->crn = $request->input('crn');
+      $materia->seccion = $request->seccion;
+      $materia->calendario = $request->calendario;
+      $materia->materia = $request->materia;
+      $materia->hora_inicio = $request->horainicio;
+      $materia->salon = $request->salon;
+      $materia->user_id = $request->usuario;
+      $materia->save();
+//       dd("adios",$materia,$request->all());
+      return redirect()->route('materia.show',compact('materia'));
+//       return view('materias.materiaEdit',compact('id'));
     }
 
     /**
@@ -103,7 +117,7 @@ class MateriaController extends Controller
 //     public function destroy($id)
     public function destroy(Materia $materia)
     {
-        dd($materia);
+//         dd("hola",$materia);
         $materia->delete();
         return redirect()->route('materia.index');
     }
