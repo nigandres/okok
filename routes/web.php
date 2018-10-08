@@ -48,6 +48,7 @@ Route::resource('materia','MateriaController')->parameters([
     'materia' => 'materia'
 ]);
 Route::resource('/alumno','AlumnoController');
+Route::resource('/user','UserController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

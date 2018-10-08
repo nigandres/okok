@@ -26,24 +26,18 @@
                         <td>materia</td>
                         <td>hora_inicio</td>
                         <td>salon</td>
-                        <td>user_id</td>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($materias as $materia)
+                      @foreach($user->materias as $materia)
                         <tr>
-                          <td>
-                            <a href="{{ action('MateriaController@show',$materia->id) }}" class="btn btn-success">
-                              {{ $materia->id }}
-                            </a>
-                          </td>
+                          <td>{{ $materia->id }}</td>
                           <td>{{ $materia->crn }}</td>
                           <td>{{ $materia->seccion }}</td>
                           <td>{{ $materia->calendario }}</td>
                           <td>{{ $materia->materia }}</td>
                           <td>{{ $materia->hora_inicio }}</td>
                           <td>{{ $materia->salon }}</td>
-                          <td>{{ $materia->user->id }}:{{ $materia->user->nombre }}</td>
                         </tr>
                       @endforeach
                     </tbody>

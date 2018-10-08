@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Materia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MateriaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +42,7 @@ class MateriaController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'crn' => 'required|max:6',
+        'crn' => 'required|max:6|min:5',
       ]);
 //       dd('nepe');
       $materia = new Materia();
@@ -49,6 +54,7 @@ class MateriaController extends Controller
       $materia->salon = $request->salon;
       $materia->user_id = $request->usuario;
       $materia->save();
+//       $request->merge(['user_id' => Auth::user()->id]);
 //       Materia::create($request->all());
       return redirect()->route('materia.index');
 //       return view('materias.materiaIndex');
@@ -65,7 +71,8 @@ class MateriaController extends Controller
 //     public function show($id)
     {
 //       $materia = Materia::find($id);
-//       dd($materia);
+      $materia->load('user');
+//       dd(Auth::user()->nombre,Auth::id(),$materia->load('user'));
 //       $subject = Materia::find($id);
 //       dd($sbject);
 //       return view('materias.materiaShow',compact('$subject'));

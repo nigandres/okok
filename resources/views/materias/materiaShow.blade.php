@@ -70,7 +70,7 @@
                           <td>{{ $materia->materia }}</td>
                           <td>{{ $materia->hora_inicio }}</td>
                           <td>{{ $materia->salon }}</td>
-                          <td>{{ $materia->user_id }}</td>
+                          <td>{{ $materia->user->id }}:{{ $materia->user->nombre }}</td>
                           <td>
                             {!! Form::open(['action' => ['MateriaController@destroy', $materia], 'method' => 'delete']) !!}
 <!--                             <form action="{{ action('MateriaController@destroy',$materia) }}" method="post"> -->

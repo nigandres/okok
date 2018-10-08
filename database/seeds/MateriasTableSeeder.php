@@ -19,7 +19,7 @@ class MateriasTableSeeder extends Seeder
             'materia' => str_random(10),
             'hora_inicio' => '15:00:00',
             'salon' => str_random(10),
-            'user_id' => 1,
+            'user_id' => 2,
         ]);
       }
     }
