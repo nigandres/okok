@@ -36,6 +36,9 @@
                     <div class="form-group">
                       <label class="col-form-label" for="crn">CRN</label>
                       <input class="form-control" name="crn" type="text" placeholder="introdusca el CRN de la materia" value="{{ isset($materia) ? $materia->crn : "" }}">
+                      <label class="col-form-label" for="crn">CRN</label>
+                      {!! Form::text('crn', null, ['class' => 'form-control', 'placeholder' => 'Escriba el nombre del crn']); !!}
+                      <small class="form-text text-muted">Sus alumnos se podrán inscribir a su materia.</small>
                     </div>
                     <div class="tile-footer">
                       <button class="btn btn-primary" type="submit">Submit</button>
