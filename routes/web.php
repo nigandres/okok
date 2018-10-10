@@ -47,8 +47,14 @@ Route::get('/begin', function () {
 Route::resource('materia','MateriaController')->parameters([
     'materia' => 'materia'
 ]);
+Route::get('/alumno/{alumno}/register','AlumnoController@register');
+Route::post('/alumno/{alumno}/materia','AttachAlumnoMateriaController@asociarAlumnoMateria');
 Route::resource('/alumno','AlumnoController');
 Route::resource('/user','UserController');
+
+
+// Route::resource('alumno.materia','AttachAlumnoMateriaController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -14,20 +14,28 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                  <h1>Registro de nuevo alumno</h1><br>
-                  <form action="{{ action('AlumnoController@store') }}" method="post">
+                  <h1>Asociar Materia y alumno</h1><br>
+                  <form action="{{ action('AttachAlumnoMateriaController@asociarAlumnoMateria',$alumno) }}" method="get">
                     {{ csrf_field() }}
                     <div class="form-group">
                       <label class="col-form-label" for="nombre">nombre</label>
-                      <input class="form-control" name="nombre" type="text" placeholder="introdusca su nombre">
+                      <input class="form-control" name="nombre" type="text" placeholder="introdusca su nombre" value="{{ $alumno->nombre }}">
                     </div>
                     <div class="form-group">
                       <label class="col-form-label" for="codigo">Codigo</label>
-                      <input class="form-control" name="codigo" type="text" placeholder="introdusca su codigo">
+                      <input class="form-control" name="codigo" type="text" placeholder="introdusca su codigo" value="{{ $alumno->codigo }}">
                     </div>
                     <div class="form-group">
                       <label class="col-form-label" for="carrera">Calendario</label>
-                      <input class="form-control" name="carrera" type="text" placeholder="introdusca su carrera">
+                      <input class="form-control" name="carrera" type="text" placeholder="introdusca su carrera" value="{{ $alumno->carrera }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleSelect1">Example select</label>
+                      <select class="form-control" id="exampleSelect1">
+                        @foreach($materias as $materia)
+                          <option>{{ $materia->crn }}</option>
+                        @endforeach
+                      </select>
                     </div>
                     <div class="tile-footer">
                       <button class="btn btn-primary" type="submit">Submit</button>

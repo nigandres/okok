@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Materia;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -56,6 +57,17 @@ class MateriaController extends Controller
       $materia->save();
 //       $request->merge(['user_id' => Auth::user()->id]);
 //       Materia::create($request->all());
+      
+      //metodo save de guardar relacion/////////////////////
+      /*$materia = new Materia($request->all());
+      $ser = User::find(Auth::user()->id);
+      $user->materias()->save($materia);*/
+      //metodo save de guardar relacion/////////////////////
+      
+      
+      
+      
+      
       return redirect()->route('materia.index');
 //       return view('materias.materiaIndex');
     }

@@ -11,4 +11,7 @@ class Materia extends Model
     public function user(){
       return $this->belongsTo('App\User');
     }
+    public function alumno(){
+      return $this->belongsToMany('App\Alumno');
+    }
 }
