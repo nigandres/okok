@@ -13,7 +13,7 @@ class MateriasTableSeeder extends Seeder
     {
       for($i=0;$i<10;$i++){
         DB::table('materias')->insert([
-            'crn' => str_random(10),
+            'crn' => 'crn'.str_random(2),
             'seccion' => str_random(10),
             'calendario' => str_random(10),
             'materia' => str_random(10),

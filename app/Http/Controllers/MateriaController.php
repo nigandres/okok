@@ -51,9 +51,9 @@ class MateriaController extends Controller
       $materia->seccion = $request->seccion;
       $materia->calendario = $request->calendario;
       $materia->materia = $request->materia;
-      $materia->hora_inicio = $request->horainicio;
+      $materia->hora_inicio = $request->hora_inicio;
       $materia->salon = $request->salon;
-      $materia->user_id = $request->usuario;
+      $materia->user_id = $request->user_id;
       $materia->save();
 //       $request->merge(['user_id' => Auth::user()->id]);
 //       Materia::create($request->all());
@@ -121,9 +121,9 @@ class MateriaController extends Controller
       $materia->seccion = $request->seccion;
       $materia->calendario = $request->calendario;
       $materia->materia = $request->materia;
-      $materia->hora_inicio = $request->horainicio;
+      $materia->hora_inicio = $request->hora_inicio;
       $materia->salon = $request->salon;
-      $materia->user_id = $request->usuario;
+      $materia->user_id = $request->user_id;
       $materia->save();
 //       dd("adios",$materia,$request->all());
       return redirect()->route('materia.show',compact('materia'));

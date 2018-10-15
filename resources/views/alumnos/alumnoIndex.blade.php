@@ -23,6 +23,7 @@
                         <td>nombre</td>
                         <td>codigo</td>
                         <td>carrera</td>
+                        <td>materias</td>
                       </tr>
                     </thead>
                     <tbody>
@@ -32,6 +33,9 @@
                           <td>{{ $alumnos->nombre }}</td>
                           <td>{{ $alumnos->codigo }}</td>
                           <td>{{ $alumnos->carrera }}</td>
+                          <td>
+                            <a href="{{ action('AlumnoController@register',$alumnos) }}" class="btn btn-success">Ir</a>
+                          </td>
                         </tr>
                       @endforeach
                     </tbody>
